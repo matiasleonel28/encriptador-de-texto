@@ -1,5 +1,10 @@
 const textArea = document.querySelector(".text-area");
 const mensaje = document.querySelector(".mensaje");
+var botonCopiar = document.getElementById('copiar');
+var textoInput = document.getElementById('texto');
+
+
+    
 
 /*La letra "e" es convertida para "enter"
 La letra "i" es convertida para "imes"
@@ -47,5 +52,10 @@ function desencriptar(stringDesencriptada){
 }
 
 
+botonCopiar.addEventListener('click', function () {
+    textoInput.select();
+    document.execCommand('copy');
+    alert('Texto copiado al portapapeles: ' + textoInput.value);
+});
 
 console.table(matrizCodigo)
